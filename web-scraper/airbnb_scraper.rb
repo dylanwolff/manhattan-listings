@@ -42,7 +42,12 @@ max_page.to_i.times do |i|
 
   # Store details (room type, number of reviews, location) in array
   page.css('div.text-muted.listing-location.text-truncate').each do |line|
-    details << line.text.strip.split(/ . /)
+    subarray = line.text.strip.split(/ . /)
+    if subarray.length == 3
+      details << subarray
+    else 
+      details << [subarray[0], "0 reviews", subarray[1]]
+    end
   end
 
 end
