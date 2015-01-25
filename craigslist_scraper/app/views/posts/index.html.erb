@@ -28,7 +28,7 @@
             <td width="13%" height="120px">
               <%= link_to post_path(post) do %>
                 <% if post.images.empty? %>
-                  <% image_tag "assets/no-image.gif", class: "thumbnail" %>
+                  <% image_tag "no-image.gif", class: "thumbnail" %>
                 <% else %>
                   <%= image_tag post.images.first.url, class: "thumbnail" %>
                 <% end %>
@@ -46,6 +46,6 @@
     </table>
 
     <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
-    
+
   <% end %>
 </div>
