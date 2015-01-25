@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order('timestamp DESC').paginate(:page => params[:page], :per_page => 30)
+    @posts = Post.all.paginate(:page => params[:page], :per_page => 30)
     @posts = @posts.where(bedrooms: params["bedrooms"]) if params["bedrooms"].present?
     @posts = @posts.where(bathrooms: params["bathrooms"]) if params["bathrooms"].present?
     @posts = @posts.where(neighborhood: params["neighborhood"]) if params["neighborhood"].present?
@@ -19,6 +19,7 @@ class PostsController < ApplicationController
     @posts = @posts.where(dogs: params["dogs"]) if params["dogs"].present?
     @posts = @posts.where(w_d_in_unit: params["w_d_in_unit"]) if params["w_d_in_unit"].present?
     @posts = @posts.where(street_parking: params["street_parking"]) if params["street_parking"].present?
+
   end
 
   # GET /posts/1
