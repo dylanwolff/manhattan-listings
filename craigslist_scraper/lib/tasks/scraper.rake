@@ -29,9 +29,6 @@ namespace :scraper do
       # Submit request
       result = JSON.parse(open(uri).read)
 
-      # Display results to screen
-      #puts result["postings"].first["annotations"]["bedrooms"]
-
       # Store results in database
       result["postings"].each do |posting|
 
@@ -97,9 +94,6 @@ namespace :scraper do
 
     # Submit request
     result = JSON.parse(open(uri).read)
-
-    # Display results to screen
-    # puts JSON.pretty_generate result
     
     # Store results in DB
     result["locations"].each do |location|
