@@ -5,7 +5,7 @@ namespace :scraper do
     require 'json'
 
     # Set API token and URL
-    auth_token = "1b0b11cfdc84b2ddb466df23afc37879"
+    auth_token = "Rails.application.secrets.3TAPS_KEY"
     polling_url = "http://polling.3taps.com/poll"
 
     # Grab data until up to date
