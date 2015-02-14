@@ -5,7 +5,7 @@ namespace :scraper do
     require 'json'
 
     # Set API token and URL
-    auth_token = "Rails.application.secrets.3TAPS_KEY"
+    auth_token = ENV["3TAPS_KEY"]
     polling_url = "http://polling.3taps.com/poll"
 
     # Grab data until up to date
@@ -18,7 +18,7 @@ namespace :scraper do
         source: "CRAIG",
         category_group: "RRRR",
         category: "RHFR",
-        'location.city' => "USA-NYM-BRL",
+        'location.region' => "USA-NYM-MAN",
         retvals: "location,external_url,heading,body,timestamp,price,images,annotations"
       }
 
@@ -45,8 +45,6 @@ namespace :scraper do
         @post.sqft = posting["annotations"]["sqft"] if posting["annotations"]["sqft"].present?
         @post.cats = posting["annotations"]["cats"] if posting["annotations"]["cats"].present?
         @post.dogs = posting["annotations"]["dogs"] if posting["annotations"]["dogs"].present?
-        @post.w_d_in_unit = posting["annotations"]["w_d_in_unit "] if posting["annotations"]["w_d_in_unit "].present?
-        @post.street_parking = posting["annotations"]["street_parking "] if posting["annotations"]["street_parking "].present?
 
         # Save post
         @post.save
@@ -77,7 +75,7 @@ namespace :scraper do
     require 'json'
 
     # Set API token and URL
-    auth_token = "Rails.application.secrets.3TAPS_KEY"
+    auth_token = ENV["3TAPS_KEY"]
     location_url = "http://reference.3taps.com/locations"
 
 
@@ -85,7 +83,7 @@ namespace :scraper do
     params = {
       auth_token: auth_token,
       level: "locality",
-      city: "USA-NYM-BRL"
+      region: "USA-NYM-MAN"
     }
 
     # Prepare API request

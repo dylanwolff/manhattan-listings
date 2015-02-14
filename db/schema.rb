@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(version: 20150126000509) do
     t.integer  "sqft"
     t.string   "cats"
     t.string   "dogs"
-    t.string   "w_d_in_unit"
-    t.string   "street_parking"
   end
 
 end
