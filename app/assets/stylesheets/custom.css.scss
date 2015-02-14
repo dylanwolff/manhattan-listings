@@ -55,6 +55,10 @@ body {
   margin-bottom: 30px;
 }
 
+input#cats, input#dogs {
+  display: block;
+}
+
 /* Listings Table Layout */
 
 .table-hover tbody tr:hover {
