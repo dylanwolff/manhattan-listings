@@ -1,58 +1,58 @@
 <div class="filter">
-    <%= form_tag posts_path, method: :get, class: "form-inline" do %>
+    <%= form_tag posts_path, method: :get, class: "form" do %>
 
-      <div class="row">
-        <div class="col-md-4">
-          <%= label_tag "Price" %>
-        </div>
-        <div class="col-md-2">
-          <%= label_tag :bedrooms %>
-        </div>
-        <div class="col-md-2">
-          <%= label_tag :bathrooms %>
-        </div>
-        <div class="col-md-4">
-          <%= label_tag :neighborhood %>
+      <div class="toprow">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="price"><%= label_tag "Price" %></label>
+              <div class="row">
+                <div class="col-md-6">
+                  <%= text_field_tag :min_price, params[:min_price], placeholder: "minimum", class: "form-control input-sm" %>
+                </div>
+                <div class="col-md-6">
+                  <%= text_field_tag :max_price, params[:max_price], placeholder: "maximum", class: "form-control input-sm" %>
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="bedrooms"><%= label_tag :bedrooms %></label>
+            <%= text_field_tag :bedrooms, params[:bedrooms], placeholder: "# of beds", class: "form-control input-sm" %>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="bathrooms"><%= label_tag :bathrooms %></label>
+            <%= text_field_tag :bathrooms, params[:bathrooms], placeholder: "# of bathrooms", class: "form-control input-sm" %>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="neighborhood"><%= label_tag :neighborhood %></label>
+            <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true, class: "form-control input-sm"}) %>
+          </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-md-4">
-          <%= text_field_tag :min_price, params[:min_price], placeholder: "minimum", class: "form-control input-sm" %>
-          <%= text_field_tag :max_price, params[:max_price], placeholder: "maximum", class: "form-control input-sm" %>
-        </div>
-        <div class="col-md-2">
-          <%= text_field_tag :bedrooms, params[:bedrooms], placeholder: "# of beds", class: "form-control input-sm" %>
-        </div>
-        <div class="col-md-2">
-          <%= text_field_tag :bathrooms, params[:bathrooms], placeholder: "# of bathrooms", class: "form-control input-sm" %>
-        </div>
-        <div class="col-md-4">
-          <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true, class: "form-control input-sm"}) %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <%= label_tag "Square footage" %>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4">
-          <%= text_field_tag :min_sqft, params[:min_sqft], placeholder: "minimum" %>
-          <%= text_field_tag :max_sqft, params[:max_sqft], placeholder: "maximum" %>
-        </div>
-        <div class="col-md-1">
-          <%= label_tag :cats %>
-          <%= check_box_tag :cats, "YES", params[:cats] %>
-        </div>
-        <div class="col-md-1">
-          <%= label_tag :dogs %>
-          <%= check_box_tag :dogs, "YES", params[:dogs] %>
-        </div>
-        <div class="col-md-2">
-          <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+      <div class="bottomrow">
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="squarefootage"><%= label_tag "Square footage" %></label>
+              <div class="row">
+                <div class="col-md-6">
+                  <%= text_field_tag :min_sqft, params[:min_sqft], placeholder: "minimum", class: "form-control input-sm" %>
+                </div>
+                <div class="col-md-6">
+                  <%= text_field_tag :max_sqft, params[:max_sqft], placeholder: "maximum", class: "form-control input-sm" %>
+                </div>
+              </div>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="cats"><%= label_tag :cats %></label>
+            <%= check_box_tag :cats, "YES", params[:cats] %>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="dogs"><%= label_tag :dogs %></label>
+            <%= check_box_tag :dogs, "YES", params[:dogs] %>
+          </div>
+          <div class="form-group col-md-4">
+            <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
+          </div>
         </div>
       </div>
     <% end %>
