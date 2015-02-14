@@ -43,8 +43,6 @@ namespace :scraper do
         @post.bedrooms = posting["annotations"]["bedrooms"] if posting["annotations"]["bedrooms"].present?
         @post.bathrooms = posting["annotations"]["bathrooms"] if posting["annotations"]["bathrooms"].present?
         @post.sqft = posting["annotations"]["sqft"] if posting["annotations"]["sqft"].present?
-        @post.cats = posting["annotations"]["cats"] if posting["annotations"]["cats"].present?
-        @post.dogs = posting["annotations"]["dogs"] if posting["annotations"]["dogs"].present?
 
         # Save post
         @post.save

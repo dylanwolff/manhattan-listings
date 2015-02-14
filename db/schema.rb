@@ -47,8 +47,6 @@ ActiveRecord::Schema.define(version: 20150126000509) do
     t.integer  "bedrooms"
     t.decimal  "bathrooms"
     t.integer  "sqft"
-    t.string   "cats"
-    t.string   "dogs"
   end
 
 end

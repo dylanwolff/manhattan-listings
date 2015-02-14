@@ -3,7 +3,7 @@
 
       <div class="top-row">
         <div class="row">
-          <div class="form-group col-sm-4 col-xs-12">
+          <div class="form-group col-md-3 col-sm-6 col-xs-12">
             <label for="price"><%= label_tag "Price" %></label>
               <div class="row">
                 <div class="col-xs-6">
@@ -14,24 +14,15 @@
                 </div>
               </div>
           </div>
-          <div class="form-group col-sm-2 col-xs-6">
+          <div class="form-group col-md-2 col-sm-3 col-xs-6">
             <label for="bedrooms"><%= label_tag :bedrooms %></label>
             <%= text_field_tag :bedrooms, params[:bedrooms], placeholder: "# of beds", class: "form-control input-sm" %>
           </div>
-          <div class="form-group col-sm-2 col-xs-6">
+          <div class="form-group col-md-2 col-sm-3 col-xs-6">
             <label for="bathrooms"><%= label_tag :bathrooms %></label>
             <%= text_field_tag :bathrooms, params[:bathrooms], placeholder: "# of bathrooms", class: "form-control input-sm" %>
           </div>
-          <div class="form-group col-sm-4">
-            <label for="neighborhood"><%= label_tag :neighborhood %></label>
-            <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true, class: "form-control input-sm"}) %>
-          </div>
-        </div>
-      </div>
-
-      <div class="bottom-row">
-        <div class="row">
-          <div class="form-group col-sm-4 col-xs-12">
+          <div class="form-group col-md-3 col-sm-6 col-xs-12">
             <label for="square-footage"><%= label_tag "Square footage" %></label>
               <div class="row">
                 <div class="col-xs-6">
@@ -42,15 +33,16 @@
                 </div>
               </div>
           </div>
-          <div class="form-group col-sm-2 col-xs-6">
-            <label for="cats"><%= label_tag :cats %></label>
-            <%= check_box_tag :cats, "YES", params[:cats] %>
+          <div class="form-group col-md-2 col-sm-6">
+            <label for="neighborhood"><%= label_tag :neighborhood %></label>
+            <%= select_tag(:neighborhood, options_from_collection_for_select(Location.all, :name, :name, params[:neighborhood]), {include_blank: true, class: "form-control input-sm"}) %>
           </div>
-          <div class="form-group col-sm-2 col-xs-6">
-            <label for="dogs"><%= label_tag :dogs %></label>
-            <%= check_box_tag :dogs, "YES", params[:dogs] %>
-          </div>
-          <div class="form-group col-xs-12">
+        </div>
+      </div>
+
+      <div class="bottom-row">
+        <div class="row">
+          <div class="form-group button-wrap col-xs-12">
             <%= submit_tag "Search", name: nil, class: "btn btn-primary" %>
           </div>
         </div>

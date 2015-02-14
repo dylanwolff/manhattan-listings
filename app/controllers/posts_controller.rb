@@ -15,9 +15,6 @@ class PostsController < ApplicationController
     @posts = @posts.where("price < ?", params["max_price"]) if params["max_price"].present?
     @posts = @posts.where("sqft > ?", params["min_sqft"]) if params["min_sqft"].present?
     @posts = @posts.where("sqft < ?", params["max_sqft"]) if params["max_sqft"].present?
-    @posts = @posts.where(cats: params["cats"]) if params["cats"].present?
-    @posts = @posts.where(dogs: params["dogs"]) if params["dogs"].present?
-
   end
 
   # GET /posts/1
