@@ -1,45 +1,66 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* General Styles */
+
 body {
-  background-color: #f4f7fb;
+  background-color: #F2F4F5;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .center {
   text-align: center;
 }
 
+/* Jumbotron and Banner */
+
 .jumbotron {
-  background-image: url(/assets/cover.jpg);
-  height: 800px;
+  // background-image: url(/assets/manhattan.jpg);
+  background-color: lightgray;
   margin: 0px;
+  height: 100vh;
+  width: 100vw;
   background-position: center;
-  h1 {
-    text-transform: uppercase;
-    color: #fff;
-    text-shadow: 0px 2px 3px #555;
-  }
-  h2 {
-    color: #fff;
-    text-shadow: 0px 2px 3px #555;
-    margin-bottom: 80px;
-  }
 }
 
 .jumbotron .container {
   padding: 80px 0px;
 }
 
-.filter {
-  background-color: rgba(215,226,241,0.9);
-  padding: 20px 30px 20px 30px;
-  border-radius: 10px;
-  margin-top: 30px;
+.banner {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #fff;
+  margin-top: 80px;
+  margin-bottom: 100px;
 }
+
+.banner h1 {
+  text-transform: uppercase;
+  text-shadow: 0px 2px 3px #555;
+}
+
+.banner h2 {
+  font-weight: 300;
+  text-shadow: 0px 2px 3px #555;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* Filter Box */
+
+.filter {
+  background-color: rgba(255,255,255,0.7);
+  padding: 20px 30px 20px 30px;
+}
+
+/* Listings Table Layout */
 
 .table-hover tbody tr:hover {
   background-color: #d7e2f1;
 }
+
+/* Show Page */
 
 tbody {
   .thumbnail {
@@ -68,6 +89,3 @@ tbody {
 .header {
   border-bottom: 2px dotted #e3e3e3;
 }
-
-
-
