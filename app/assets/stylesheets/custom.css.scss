@@ -27,9 +27,9 @@ body {
   color: #fff;
 }
 
-/* Jumbotron and Banner */
+/* Cover and Banner */
 
-.jumbotron {
+.cover {
   background:
     linear-gradient(
       rgba(0, 0, 0, 0.20), 
@@ -53,6 +53,7 @@ body {
 .banner h1 {
   text-transform: uppercase;
   text-shadow: 0px 2px 3px #555;
+  font-size: 60px;
 }
 
 .banner h2 {
@@ -60,6 +61,7 @@ body {
   text-shadow: 0px 2px 3px #555;
   margin-top: 0;
   margin-bottom: 20px;
+  font-size: 30px;
 }
 
 /* Filter Box */
@@ -67,7 +69,6 @@ body {
 .filter {
   background-color: rgba(255,255,255,0.8);
   padding: 20px 30px 20px 30px;
-  margin-top: 50px;
   margin-bottom: 30px;
 }
 
@@ -117,4 +118,9 @@ tbody {
 
 .header {
   border-bottom: 2px dotted #e3e3e3;
+}
+
+p.listing-url {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
