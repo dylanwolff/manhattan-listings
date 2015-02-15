@@ -24,9 +24,21 @@
 /* General Styles */
 
 body {
-  background-color: #F2F4F5;
   font-family: "Open Sans", sans-serif;
   padding-top: 50px;
+  height: 100vh;
+}
+
+body.background {
+  height: 100vh;
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.20), 
+      rgba(0, 0, 0, 0.20)
+    ), 
+  url(/assets/cover.jpg);
+  margin: 0px;
+  background-position: center;
 }
 
 .center {
@@ -47,20 +59,7 @@ body {
   color: #fff;
 }
 
-/* Cover and Banner */
-
-.cover {
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.20), 
-      rgba(0, 0, 0, 0.20)
-    ), 
-  url(/assets/cover.jpg);
-  margin: 0px;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
-}
+/* Banner */
 
 .banner {
   text-align: center;
