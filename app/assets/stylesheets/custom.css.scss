@@ -1,6 +1,26 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+/* Media Queries */
+
+@media only screen and (max-width: 479px) {
+        .preview{
+            display: none;
+        }
+    }
+
+@media only screen and (max-width: 767px) {
+        .bedrooms, .bathrooms, .neighborhood{
+            display: none;
+        }
+    }
+
+ @media only screen and (max-width: 992px) {
+        .last-updated{
+            display: none;
+        }
+    }
+
 /* General Styles */
 
 body {
