@@ -3,20 +3,33 @@
 
 /* Media Queries */
 
-@media only screen and (max-width: 479px) {
-        .preview{
+@media screen and (max-width: 479px) {
+        .preview {
+            display: none;
+        }
+        div.banner {
+          margin-top: 30px;
+          margin-bottom: 20px;
+        }
+        div.banner h1 {
+          font-size: 40px;
+        }
+        div.banner h2 {
+          font-size: 20px;
+        }
+        div.footer {
+          margin-top: 30px;
+        }
+    }
+
+@media screen and (max-width: 767px) {
+        .bedrooms, .bathrooms {
             display: none;
         }
     }
 
-@media only screen and (max-width: 767px) {
-        .bedrooms, .bathrooms{
-            display: none;
-        }
-    }
-
- @media only screen and (max-width: 992px) {
-        .last-updated{
+ @media screen and (max-width: 992px) {
+        .last-updated {
             display: none;
         }
     }
@@ -27,6 +40,7 @@ body {
   font-family: "Open Sans", sans-serif;
   padding-top: 50px;
   height: 100vh;
+  margin-bottom: 50px;
 }
 
 body.background {
@@ -91,10 +105,6 @@ body.background {
   margin-bottom: 30px;
 }
 
-input#cats, input#dogs {
-  display: block;
-}
-
 .bottom-row {
   text-align: center;
 }
@@ -142,4 +152,14 @@ tbody {
 p.listing-url {
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* Footer */
+
+.footer {
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 60px;
 }
