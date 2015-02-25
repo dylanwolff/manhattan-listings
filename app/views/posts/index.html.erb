@@ -34,7 +34,7 @@
                 <% end %>
               <% end %>
             </td>
-            <td class="heading" style="vertical-align:middle"><%= link_to post.heading, post %></td>
+            <td class="heading" style="vertical-align:middle"><%= link_to simple_format(post.heading), post %></td>
             <td class="center price" style="vertical-align:middle"><%= number_to_currency(post.price, precision: 0) %></td>
             <td class="center bedrooms" style="vertical-align:middle"><%= post.bedrooms %></td>
             <td class="center bathrooms" style="vertical-align:middle"><%= post.bathrooms %></td>
