@@ -1,3 +1,5 @@
 == Manhattan Listings
 
 A simple app to return rental listings in Manhattan, NYC from craigslist.com.
+
+Following recent legal action, 3taps no longer provides data from Craigslist. As a result this project is no longer active.
